@@ -153,7 +153,7 @@ class Chessboard implements JsonSerializable
 
                 $blockingPiece = $blockingPieces[0];
 
-                if ($blockingPiece->hasSameColor($king))
+                if ($blockingPiece->hasColor($king->getColor()))
                     $defendingPieces->detach($blockingPiece);
 
             } elseif ($opponentPiece->canCapturePosition($kingPosition)) {

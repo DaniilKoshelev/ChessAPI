@@ -87,7 +87,7 @@ class King extends Piece
 
         // Assure that King's way is safe
         $positionToCheck = clone $this->getPosition();
-        $end = $this->getPosition()->add(2 * $dir, 0);
+        $end = $this->getPosition()->add(3 * $dir, 0);
 
         while ($positionToCheck != $end) {
             if (!$this->positionIsSafe($positionToCheck))
@@ -121,8 +121,7 @@ class King extends Piece
             if (!$newPosition->isValid())
                 continue;
 
-            if ($this->canCapturePosition($newPosition) &&
-                ($this->positionIsOccupiedByOpponent($newPosition) || $this->positionIsFree($newPosition)) &&
+            if (($this->positionIsOccupiedByOpponent($newPosition) || $this->positionIsFree($newPosition)) &&
                 $this->positionIsSafe($newPosition))
                 return true;
         }
