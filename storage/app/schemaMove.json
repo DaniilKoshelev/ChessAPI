@@ -1,0 +1,12 @@
+{
+  "type": "object",
+  "properties": {
+    "from": {"type": "string", "pattern": "^([a-h]{1})([1-8]{1})$"},
+    "to": {"type": "string", "pattern": "^([a-h]{1})([1-8]{1})$"},
+    "piece": {
+      "type": { "enum": [ "Rook", "Knight", "Bishop", "Queen"] }
+    }
+  },
+  "required": ["from", "to"],
+  "additionalProperties": false
+}
