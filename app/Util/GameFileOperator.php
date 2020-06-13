@@ -47,13 +47,10 @@ class GameFileOperator
         }
     }
 
-    //TODO: remove extra js
     public function save(Game $game)
     {
         $json = json_encode($game);
-        $forJS = 'let json=' . $json . '; export default json;'; //delete
         file_put_contents(config('FILE_GAME'), $json);
-        file_put_contents(__DIR__ . '/../../storage/user/game.js', $forJS); // delete
     }
 
     public function getCurrentPlayerColor(): string
